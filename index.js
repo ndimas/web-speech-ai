@@ -37,7 +37,7 @@ io.on('connection', function(socket) {
 
     apiaiReq.on('response', (response) => {
       let aiText = response.result.fulfillment.speech;
-      console.log('Bot reply: ' + aiText);
+      console.log('Bot reply: ' + response.result);
       socket.emit('bot reply', aiText);
     });
 
